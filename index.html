@@ -45,7 +45,7 @@
       </div>
       <div class="cards three">
         <article class="card stat-card">
-          <div class="num" data-to="2200000" data-comma>0</div>
+          <div class="num" data-to="2800000" data-comma>0</div>
           <div class="lbl">farmers rely on FarmerChat</div>
         </article>
         <article class="card">
@@ -77,7 +77,76 @@
     </div>
   </section>
 
-  <!-- ══════ 4 · IMPACT ══════ -->
+  <!-- ══════ 4 · PIPELINE DIAGRAM ══════ -->
+  <section class="scene">
+    <div class="content">
+      <div class="scene-head">
+        <span class="kicker"><span class="kdot"></span>How it works</span>
+        <h2>Every survey moves through<br><span class="hl">a pipeline you can inspect.</span></h2>
+      </div>
+      <div class="flow" aria-label="Pipeline: an insight flows through select, generate, review, then either accept or skip">
+        <div class="flow-node start">
+          <span class="flow-ic">◗</span>
+          <b>Insight</b>
+          <small>from a farmer's chat</small>
+        </div>
+        <span class="flow-link"></span>
+        <div class="flow-node">
+          <span class="flow-ic">⌕</span>
+          <b>Select</b>
+          <small>rules decide if it needs a survey</small>
+        </div>
+        <span class="flow-link"></span>
+        <div class="flow-node">
+          <span class="flow-ic">✎</span>
+          <b>Generate</b>
+          <small>draft the survey in the farmer's language</small>
+        </div>
+        <span class="flow-link"></span>
+        <div class="flow-node">
+          <span class="flow-ic">⚖</span>
+          <b>Review</b>
+          <small>a second model checks it</small>
+        </div>
+        <span class="flow-link"></span>
+        <div class="flow-branch">
+          <div class="flow-node accept">
+            <span class="flow-ic">✓</span>
+            <b>Accept</b>
+            <small>schedule &amp; hand off</small>
+          </div>
+          <div class="flow-node skip">
+            <span class="flow-ic">—</span>
+            <b>Skip</b>
+            <small>nothing sent</small>
+          </div>
+        </div>
+      </div>
+      <p class="punch sm-punch">The farmer is only ever contacted <span class="hl">after it clears every step.</span></p>
+    </div>
+  </section>
+
+  <!-- ══════ 5 · RULES ══════ -->
+  <section class="scene">
+    <div class="content">
+      <div class="scene-head">
+        <span class="kicker"><span class="kdot"></span>The rules that decide</span>
+        <h2>Before any survey is written,<br><span class="hl">plain rules check the insight.</span></h2>
+        <p class="lead">Most of these end the process early, so the common case costs nothing. Only the last one leads to a survey.</p>
+      </div>
+      <div class="rules">
+        <div class="rule"><span class="rid">R1</span><div><b>Junk or invalid insight</b><span>Broken or low-quality data is dropped.</span></div></div>
+        <div class="rule"><span class="rid">R2</span><div><b>Nothing to verify</b><span>General information with no action to follow up.</span></div></div>
+        <div class="rule"><span class="rid">R3</span><div><b>Waiting for details</b><span>The conversation isn't finished yet.</span></div></div>
+        <div class="rule"><span class="rid">R4</span><div><b>No check needed</b><span>The advice doesn't call for a follow-up.</span></div></div>
+        <div class="rule"><span class="rid">R5</span><div><b>Season has passed</b><span>No sensible send window remains before season's end.</span></div></div>
+        <div class="rule"><span class="rid">R6</span><div><b>Crop already harvested</b><span>The calendar shows the crop is done.</span></div></div>
+        <div class="rule go"><span class="rid">R7</span><div><b>Send a survey</b><span>None of the above applied, so a survey is worth writing.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ 6 · IMPACT ══════ -->
   <section class="scene">
     <div class="content">
       <div class="scene-head">
@@ -102,7 +171,7 @@
     </div>
   </section>
 
-  <!-- ══════ 5 · IMPACT / CLOSE ══════ -->
+  <!-- ══════ 7 · IMPACT / CLOSE ══════ -->
   <section class="scene scene-close">
     <div class="orb orb-c" aria-hidden="true"></div>
     <div class="content">
