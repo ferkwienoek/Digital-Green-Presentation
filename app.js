@@ -34,10 +34,15 @@
 
   function go(i) {
     cur = Math.max(0, Math.min(scenes.length - 1, i));
-    deck.style.transform = `translateX(${-cur * 100}vw)`;
+    deck.style.transform = `translateX(${-cur * 100}%)`;
     scenes.forEach((s, k) => {
       s.setAttribute('aria-hidden', k !== cur);
       if (k !== cur) s.classList.remove('active');
+    });
+    // let a slide scroll only if its content genuinely overflows
+    requestAnimationFrame(() => {
+      const sc = scenes[cur], c = sc.querySelector('.content');
+      sc.classList.toggle('overflowing', c && c.scrollHeight > sc.clientHeight - 40);
     });
     requestAnimationFrame(() => {
       scenes[cur].classList.add('active');
