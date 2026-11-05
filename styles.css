@@ -95,6 +95,14 @@ h2{font-size:clamp(1.7rem,3.4vw,3.1rem);font-weight:900;line-height:1.07;letter-
 .punch.big{font-size:clamp(1.6rem,3.2vw,2.7rem);margin-top:clamp(20px,3.5vh,36px)}
 .punch.sm-punch{font-size:clamp(1.05rem,1.9vw,1.45rem);margin-top:clamp(16px,2.5vh,26px)}
 
+/* timing callout on the pipeline slide */
+.timing-note{display:flex;gap:12px;align-items:center;margin-top:clamp(16px,2.5vh,24px);
+  padding:clamp(11px,1.6vh,15px) 18px;background:var(--bg2);border:1px solid var(--line);
+  border-left:3px solid var(--g);border-radius:10px;
+  font-size:clamp(.9rem,1.3vw,1.02rem);color:var(--mut);line-height:1.45}
+.timing-note .tn-ic{flex-shrink:0;color:var(--g);font-size:1.2rem}
+.timing-note b{color:var(--tx);font-weight:800}
+
 /* ─── flow diagram ─── */
 .flow{display:flex;align-items:stretch;gap:0;margin-top:clamp(20px,3.5vh,32px);flex-wrap:wrap}
 .flow-node{flex:1 1 0;min-width:110px;background:linear-gradient(170deg,var(--card2),var(--card));
@@ -121,6 +129,29 @@ h2{font-size:clamp(1.7rem,3.4vw,3.1rem);font-weight:900;line-height:1.07;letter-
     border-left-color:transparent;border-top-color:var(--g)}
   .flow-branch{flex-direction:row}
 }
+
+/* ─── test case cards ─── */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);margin-top:clamp(18px,3vh,28px)}
+@media(max-width:760px){.cases{grid-template-columns:1fr}}
+.case{background:linear-gradient(170deg,var(--card2),var(--card));border:1px solid var(--line);
+  border-radius:16px;padding:clamp(16px,2vh,22px);display:flex;flex-direction:column;gap:clamp(8px,1.3vh,12px)}
+.case-go{border-color:#2d6b43}
+.case-skip{border-color:#3a3030}
+.case-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.case-id{font-weight:900;letter-spacing:-.01em;font-size:1.05rem}
+.case-tag{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  padding:4px 10px;border-radius:99px;border:1px solid var(--line)}
+.case-tag.go{color:var(--ink);background:var(--g);border-color:var(--g)}
+.case-tag.skip{color:var(--mut);background:var(--bg2)}
+.case-meta{font-size:.78rem;color:var(--mut);margin:0;letter-spacing:.01em}
+.case-row{display:flex;flex-direction:column;gap:2px}
+.case-row .case-k{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--g);font-weight:800}
+.case-row p{margin:0;font-size:clamp(.88rem,1.3vw,1rem);line-height:1.42;color:#d6e6da}
+.case-out{margin-top:auto;padding-top:clamp(8px,1.2vh,12px);border-top:1px solid var(--line)}
+.case-out span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--mut);font-weight:800;margin-bottom:4px}
+.case-out b{font-size:clamp(.88rem,1.3vw,1rem);line-height:1.4;font-weight:700}
+.case-out.go b{color:var(--g)}
+.case-out.skip b{color:var(--mut)}
 
 /* ─── rules grid ─── */
 .rules{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(9px,1.3vh,12px);margin-top:clamp(18px,3vh,28px)}
@@ -227,6 +258,12 @@ h2{font-size:clamp(1.7rem,3.4vw,3.1rem);font-weight:900;line-height:1.07;letter-
 .scene.active .flow > *:nth-child(8){transition-delay:1.06s}
 .scene.active .flow > *:nth-child(9){transition-delay:1.14s}
 
+/* case cards stagger */
+.cases > *{opacity:0;transform:translateY(22px) scale(.97);transition:opacity .6s ease,transform .7s var(--ease)}
+.scene.active .cases > *{opacity:1;transform:none}
+.scene.active .cases > *:nth-child(1){transition-delay:.5s}
+.scene.active .cases > *:nth-child(2){transition-delay:.68s}
+
 /* rules stagger */
 .rules .rule{opacity:0;transform:translateY(18px) scale(.97);transition:opacity .5s ease,transform .6s var(--ease)}
 .scene.active .rules .rule{opacity:1;transform:none}
@@ -250,5 +287,5 @@ h2{font-size:clamp(1.7rem,3.4vw,3.1rem);font-weight:900;line-height:1.07;letter-
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .scene,.scene .content>*,.scene-head>*,.cards>*,.steps li,.bullets li,
-  .flow>*,.rules .rule{opacity:1;transform:none;filter:none}
+  .flow>*,.rules .rule,.cases>*{opacity:1;transform:none;filter:none}
 }
