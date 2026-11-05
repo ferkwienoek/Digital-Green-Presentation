@@ -18,6 +18,8 @@
     scene.querySelectorAll('.num').forEach(el => {
       if (el.classList.contains('word')) return;
       if (el._done) return;
+      // only animate when a numeric data-to is provided; otherwise leave the text as written
+      if (el.dataset.to === undefined || isNaN(+el.dataset.to)) return;
       el._done = true;
       const to = +el.dataset.to;
       const comma = el.hasAttribute('data-comma');
