@@ -122,7 +122,7 @@
           </div>
         </div>
       </div>
-      <p class="punch sm-punch">The farmer is only ever contacted <span class="hl">after it clears every step.</span></p>
+      <p class="timing-note"><span class="tn-ic">◴</span><span>It also picks <b>when</b> to send, the farmer's preferred time, set to local IST and kept within sensible hours and the crop's season.</span></p>
     </div>
   </section>
 
@@ -136,55 +136,74 @@
       </div>
       <div class="rules">
         <div class="rule"><span class="rid">R1</span><div><b>Junk or invalid insight</b><span>Broken or low-quality data is dropped.</span></div></div>
-        <div class="rule"><span class="rid">R2</span><div><b>Nothing to verify</b><span>General information with no action to follow up.</span></div></div>
-        <div class="rule"><span class="rid">R3</span><div><b>Waiting for details</b><span>The conversation isn't finished yet.</span></div></div>
-        <div class="rule"><span class="rid">R4</span><div><b>No check needed</b><span>The advice doesn't call for a follow-up.</span></div></div>
-        <div class="rule"><span class="rid">R5</span><div><b>Season has passed</b><span>No sensible send window remains before season's end.</span></div></div>
-        <div class="rule"><span class="rid">R6</span><div><b>Crop already harvested</b><span>The calendar shows the crop is done.</span></div></div>
-        <div class="rule go"><span class="rid">R7</span><div><b>Send a survey</b><span>None of the above applied, so a survey is worth writing.</span></div></div>
+        <div class="rule"><span class="rid">R3</span><div><b>Nothing to verify</b><span>General information with no action to follow up.</span></div></div>
+        <div class="rule"><span class="rid">R4</span><div><b>Waiting for details</b><span>The conversation isn't finished yet.</span></div></div>
+        <div class="rule"><span class="rid">R5</span><div><b>No check needed</b><span>The advice doesn't call for a follow-up.</span></div></div>
+        <div class="rule"><span class="rid">R6</span><div><b>Season has passed</b><span>No sensible send window remains before season's end.</span></div></div>
+        <div class="rule"><span class="rid">R7</span><div><b>Crop already harvested</b><span>The calendar shows the crop is done.</span></div></div>
+        <div class="rule go"><span class="rid">R8</span><div><b>Send a survey</b><span>None of the above applied, so a survey is worth writing.</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════ 6 · IMPACT ══════ -->
+  <!-- ══════ 6 · TEST CASES ══════ -->
   <section class="scene">
     <div class="content">
       <div class="scene-head">
-        <span class="kicker"><span class="kdot"></span>Why it matters</span>
-        <h2>A clearer picture<br><span class="hl">of what's working in the field.</span></h2>
-        <p class="lead">Rather than drawing conclusions from a small sample, Digital Green can hear back from farmers across the whole season. The rigorous field trials still matter. This fills in the long stretches between them.</p>
+        <span class="kicker"><span class="kdot"></span>From the golden set</span>
+        <h2>Two real insights,<br><span class="hl">two honest outcomes.</span></h2>
       </div>
-      <div class="cards three">
-        <article class="card accent">
-          <h3 class="ctitle">Every conversation counts</h3>
-          <p class="ctext">Each resolved chat becomes a real signal, not a once-a-study sample.</p>
+      <div class="cases">
+        <!-- CASE A: survey written — golden set I-000263 -->
+        <article class="case case-go">
+          <header class="case-top">
+            <span class="case-id">I-000263</span>
+            <span class="case-tag go">Survey written</span>
+          </header>
+          <p class="case-meta">wheat · variety · hi-IN · Nov 6, 2026</p>
+          <div class="case-row"><span class="case-k">Farmer asked</span><p>What are the options for sowing wheat late this season?</p></div>
+          <div class="case-row"><span class="case-k">Advice given</span><p>A staged plan, pick a variety suited to late sowing, raise the seed rate, then watch how the crop comes up.</p></div>
+          <div class="case-out go"><span>The survey it should produce</span><b>“How much of the plan have you done?” · “Is the plan working so far?”</b></div>
         </article>
-        <article class="card">
-          <h3 class="ctitle">In the farmer's language</h3>
-          <p class="ctext">Hindi today, with more languages and a voice version on the way.</p>
-        </article>
-        <article class="card">
-          <h3 class="ctitle">Respectful of their time</h3>
-          <p class="ctext">Short, relevant, and never anything off-topic or intrusive.</p>
+        <!-- CASE B: skipped — golden set I-000837 -->
+        <article class="case case-skip">
+          <header class="case-top">
+            <span class="case-id">I-000837</span>
+            <span class="case-tag skip">Skipped · R4</span>
+          </header>
+          <p class="case-meta">mustard · pest · hi-IN · Nov 17, 2026</p>
+          <div class="case-row"><span class="case-k">Farmer asked</span><p>Black and orange bugs sucking the young mustard plants, what is wrong?</p></div>
+          <div class="case-row"><span class="case-k">Advice given</span><p>Asked for more details, like the sowing date, before giving any advice.</p></div>
+          <div class="case-out skip"><span>The right call</span><b>No advice was given yet, so there's nothing to follow up on. Nothing is sent.</b></div>
         </article>
       </div>
+      <p class="timing-note"><span class="tn-ic">◴</span><span>Both are real cases from Digital Green's golden set, <b>with the outcome the agent is scored against.</b></span></p>
     </div>
   </section>
 
-  <!-- ══════ 7 · IMPACT / CLOSE ══════ -->
+  <!-- ══════ 7 · COST / CLOSE ══════ -->
   <section class="scene scene-close">
     <div class="orb orb-c" aria-hidden="true"></div>
     <div class="content">
       <div class="scene-head">
-        <span class="kicker"><span class="kdot"></span>What it takes to adopt</span>
-        <h2>Light to run,<br><span class="hl">and built to be handed over.</span></h2>
+        <span class="kicker"><span class="kdot"></span>What it costs</span>
+        <h2>About a dollar<br><span class="hl">for a thousand surveys.</span></h2>
       </div>
-      <ul class="bullets">
-        <li><b>It fits into what Digital Green already runs,</b> so there's nothing new for them to learn or maintain.</li>
-        <li><b>Most conversations are handled without calling a model at all,</b> which keeps the cost small even as it grows.</li>
-        <li><b>It's open source,</b> so other organizations working with farmers can use it too.</li>
-      </ul>
-      <p class="punch big">Starting with a pilot of 10,000 farmers, <span class="hl">with room to grow from there.</span></p>
+      <div class="cards three">
+        <article class="card accent">
+          <div class="num">~$1</div>
+          <div class="lbl">for 1,000 surveys with Field Echo. Measured from a real run: 25 insights cost less than a cent.</div>
+        </article>
+        <article class="card">
+          <div class="num">$1,000s</div>
+          <div class="lbl">for one old-style field study, and it still reaches only a few thousand farmers over months.</div>
+        </article>
+        <article class="card">
+          <div class="num" data-to="2">0</div>
+          <div class="lbl">model calls per survey, and most insights are filtered out in code before any call is made.</div>
+        </article>
+      </div>
+      <p class="punch">Cheap enough to ask the whole base, <span class="hl">not just a sample.</span></p>
     </div>
   </section>
 
@@ -196,6 +215,6 @@
   <span class="brand-mini">Field Echo</span>
 </footer>
 
-<script src="app.js"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>
